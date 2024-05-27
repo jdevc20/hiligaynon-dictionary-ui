@@ -10,7 +10,7 @@ function About() {
       <main>
         <section>
           <h2>Our Team</h2>
-          <p>Introduce your team members here.</p>
+        
         </section>
         
         <section>
