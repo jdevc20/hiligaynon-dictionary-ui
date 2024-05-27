@@ -2,7 +2,7 @@ import React from "react";
 
 function About() {
   return (
-    <div className="container mt-5">
+    <div className="container mt-5 home-landing-message">
       <header>
         <h1>About Us</h1>
       </header>
@@ -20,7 +20,7 @@ function About() {
       </main>
       
       <footer>
-        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+        <p>&copy; 2024 Hiligaynon Gid!</p>
       </footer>
     </div>
   );
