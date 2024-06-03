@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import DictionaryWordItem from '../components/DictionaryWordItem';
-import WordDetail from '../components/WordDetail';
-import api from './api/api';
+import DictionaryWordItem from '@/components/DictionaryWordItem';
+import api from '../api/api';
 
 function Dictionary() {
   const [selectedWord, setSelectedWord] = useState(null);
