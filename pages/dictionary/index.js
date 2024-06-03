@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import DictionaryWordItem from '@/components/DictionaryWordItem';
 import api from '../api/api';
 
@@ -7,6 +8,8 @@ function Dictionary() {
   const [words, setWords] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [isLoading, setIsLoading] = useState(true);
+
+  const router = useRouter();
 
   useEffect(() => {
     fetchWords();
@@ -23,7 +26,9 @@ function Dictionary() {
   };
 
   const handleWordSelect = (word) => {
-    setSelectedWord(word);
+    //setSelectedWord(word);
+    router.push(`/dictionary/${word.word}`);
+
   };
 
   const handleBackButtonClick = () => {
