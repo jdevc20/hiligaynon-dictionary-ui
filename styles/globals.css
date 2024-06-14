@@ -344,3 +344,7 @@ label {
   border-radius: 20px;
 
 }
+
+.letter-active {
+  background-color: #0b8e75;
+}

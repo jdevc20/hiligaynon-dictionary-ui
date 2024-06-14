@@ -20,7 +20,13 @@ const AlphabetPagination = () => {
         <button
           key={index}
           onClick={() => handleClick(letter)}
-          className={`pagination-button ${currentLetter === letter ? 'active' : ''}`}
+          className={`pagination-button ${currentLetter === letter ? 'letter-active' : ''}`}
+          style={{
+            margin: '0 5px',
+            padding: '5px 10px',
+            borderRadius: '10px',
+            backgroundColor: currentLetter === letter ? 'lightblue' : 'white',
+          }}
         >
           {letter}
         </button>
