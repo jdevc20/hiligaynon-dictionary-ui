@@ -49,11 +49,12 @@ body {
 }
 
 .resultContainer {
-  height: calc(80vh - 20px); 
-/*    overflow-y: auto;*/
-  padding: 0 20px; 
+  height: calc(80vh - 20px);
+  overflow-y: auto; 
+  padding: 0 20px;
   margin-top: 10px;
 }
+
 
 .wordGrid {
   display: grid;

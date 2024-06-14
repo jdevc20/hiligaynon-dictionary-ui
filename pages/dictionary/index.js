@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import DictionaryWordItem from '@/components/DictionaryWordItem';
 import api from '../api/api';
+import AlphabetPagination from '@/components/AlphabetPagination';
 
 function Dictionary() {
   const [selectedWord, setSelectedWord] = useState(null);
@@ -10,25 +11,33 @@ function Dictionary() {
   const [isLoading, setIsLoading] = useState(true);
 
   const router = useRouter();
+  const { query } = router;
 
   useEffect(() => {
-    fetchWords();
-  }, []);
+    // Default to letter 'a' if query.letter is not present
+    const initialLetter = query.letter || 'a';
+    fetchWords(initialLetter);
+    
+    // Redirect to /dictionary?letter=a if no query parameter is present
+    if (!query.letter) {
+      router.replace('/dictionary?letter=a');
+    }
+  }, [query.letter]);
 
-  const fetchWords = async () => {
+  const fetchWords = async (letter) => {
+    setIsLoading(true);
     try {
-      const wordsData = await api.get('/dictionary/words');
+      const wordsData = await api.get(`/dictionary/words?letter=${letter}`);
       setWords(wordsData);
-      setIsLoading(false);
     } catch (error) {
       console.error('Error fetching words:', error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   const handleWordSelect = (word) => {
-    //setSelectedWord(word);
     router.push(`/dictionary/${word.word}`);
-
   };
 
   const handleBackButtonClick = () => {
@@ -62,24 +71,27 @@ function Dictionary() {
           onChange={handleSearchChange}
         />
       </div>
+      <AlphabetPagination />
       <div className="resultContainer">
         {isLoading ? (
           <div className="loadingContainer">Loading Dictionary...</div>
         ) : selectedWord ? (
           <div className="container detail-container">
-            <WordDetail word={selectedWord} onBack={handleBackButtonClick} />
+            {/* Render detailed view of selected word */}
           </div>
         ) : (
-          <div className="wordGrid">
-            {filteredWords.map((word, index) => (
-              <DictionaryWordItem
-                key={index}
-                word={word}
-                definition={word.definition}
-                onSelect={() => handleWordSelect(word)}
-              />
-            ))}
-          </div>
+          <>
+            <div className="wordGrid">
+              {filteredWords.map((word, index) => (
+                <DictionaryWordItem
+                  key={index}
+                  word={word}
+                  definition={word.definition}
+                  onSelect={() => handleWordSelect(word)}
+                />
+              ))}
+            </div>
+          </>
         )}
       </div>
     </div>
