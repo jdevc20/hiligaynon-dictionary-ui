@@ -3,9 +3,9 @@ import hiligaynonMessage from "./messages.js";
 
 function App() {
   return (
-    <div className="container mt-5 page">
+    <div className="container page">
       <div className="jumbotron bg-primary text-white mt-2">
-        <h1 className="display-4">Hello, Ilonggos!</h1>
+        <h1 className="display-4 mt-2">Hello, Ilonggos!</h1>
       </div>
       <div className="card">
         <div className="card-body">
