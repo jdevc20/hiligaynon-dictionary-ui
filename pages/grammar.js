@@ -17,7 +17,7 @@ const Grammar = () => {
     const [selectedTopic, setSelectedTopic] = useState(topics[0]);
 
     return (
-        <div className="container mt-5">
+        <div className="container page">
             <div className="row">
                 {/* Sidebar */}
                 <div className="d-lg-none mb-3">

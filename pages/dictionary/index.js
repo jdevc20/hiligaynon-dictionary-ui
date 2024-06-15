@@ -61,7 +61,7 @@ function Dictionary() {
   );
 
   return (
-    <div className="container">
+    <div className="container page">
       <div className="searchContainer">
         <input
           type="text"

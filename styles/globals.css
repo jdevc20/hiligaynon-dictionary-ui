@@ -348,3 +348,7 @@ label {
 .letter-active {
   background-color: #0b8e75;
 }
+
+.page {
+  margin-top: 80px;
+}

@@ -3,8 +3,8 @@ import hiligaynonMessage from "./messages.js";
 
 function App() {
   return (
-    <div className="container mt-5">
-      <div className="jumbotron bg-primary text-white">
+    <div className="container mt-5 page">
+      <div className="jumbotron bg-primary text-white mt-2">
         <h1 className="display-4">Hello, Ilonggos!</h1>
       </div>
       <div className="card">
