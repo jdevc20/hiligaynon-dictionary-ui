@@ -34,7 +34,8 @@ const WordDetail = ({ wordData }) => {
   }
 
   return (
-    <div className="container mt-3 mb-5 pb-2">
+    <div className="container mt-5 mb-5 pb-2 page">
+      <br/>
       <button className="btn btn-back" onClick={() => router.back()}>
         <i className="fa fa-chevron-circle-left" aria-hidden="true"></i>
       </button>
