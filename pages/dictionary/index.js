@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
-import DictionaryWordItem from '@/components/DictionaryWordItem';
-import api from '../api/api';
-import AlphabetPagination from '@/components/AlphabetPagination';
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import DictionaryWordItem from "@/components/DictionaryWordItem";
+import api from "../api/api";
+import AlphabetPagination from "@/components/AlphabetPagination";
 
 function Dictionary() {
   const [selectedWord, setSelectedWord] = useState(null);
   const [words, setWords] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
   const router = useRouter();
@@ -15,12 +15,12 @@ function Dictionary() {
 
   useEffect(() => {
     // Default to letter 'a' if query.letter is not present
-    const initialLetter = query.letter || 'a';
+    const initialLetter = query.letter || "a";
     fetchWords(initialLetter);
-    
+
     // Redirect to /dictionary?letter=a if no query parameter is present
     if (!query.letter) {
-      router.replace('/dictionary?letter=a');
+      router.replace("/dictionary?letter=a");
     }
   }, [query.letter]);
 
@@ -30,7 +30,7 @@ function Dictionary() {
       const wordsData = await api.get(`/dictionary/words?letter=${letter}`);
       setWords(wordsData);
     } catch (error) {
-      console.error('Error fetching words:', error);
+      console.error("Error fetching words:", error);
     } finally {
       setIsLoading(false);
     }
@@ -53,10 +53,12 @@ function Dictionary() {
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   };
 
-  const collator = new Intl.Collator(undefined, { sensitivity: 'base' });
-  const sortedWords = [...words].sort((a, b) => collator.compare(a.word, b.word));
+  const collator = new Intl.Collator(undefined, { sensitivity: "base" });
+  const sortedWords = [...words].sort((a, b) =>
+    collator.compare(a.word, b.word)
+  );
 
-  const filteredWords = sortedWords.filter(word =>
+  const filteredWords = sortedWords.filter((word) =>
     removeAccents(word.word.toLowerCase()).includes(searchTerm.toLowerCase())
   );
 
@@ -71,8 +73,13 @@ function Dictionary() {
           onChange={handleSearchChange}
         />
       </div>
-      <AlphabetPagination />
-      <div className="resultContainer">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-3">
+            <AlphabetPagination />
+          </div>
+          <div className="col-md-9">
+            <div className="resultContainer">
         {isLoading ? (
           <div className="loadingContainer">Loading Dictionary...</div>
         ) : selectedWord ? (
@@ -94,6 +101,11 @@ function Dictionary() {
           </>
         )}
       </div>
+          </div>
+        </div>
+      </div>
+
+
     </div>
   );
 }
