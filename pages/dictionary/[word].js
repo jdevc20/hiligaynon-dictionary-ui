@@ -22,7 +22,7 @@ const WordDetail = ({ wordData }) => {
     // Leave Blank for now
   };
 
-  if (!wordData || wordData.length === 0) {
+  if (!wordData || !wordData.data || wordData.data.length === 0) {
     return (
       <div
         className="container mt-5 text-white d-flex justify-content-center align-items-center"
@@ -33,13 +33,22 @@ const WordDetail = ({ wordData }) => {
     );
   }
 
+  // Ensure wordData.data is an array before mapping over it
+  if (!Array.isArray(wordData.data)) {
+    return (
+      <div className="container mt-5">
+        <p>Error: Word data is not in the expected format.</p>
+      </div>
+    );
+  }
+
   return (
     <div className="container mt-5 mb-5 pb-2 page">
-      <br/>
+      <br />
       <button className="btn btn-back" onClick={() => router.back()}>
         <i className="fa fa-chevron-circle-left" aria-hidden="true"></i>
       </button>
-      {wordData.map((wordItem, index) => (
+      {wordData.data.map((wordItem, index) => (
         <div
           key={index}
           className="wordDetailContainer roboto-mono-message mt-2"
@@ -110,7 +119,6 @@ const WordDetail = ({ wordData }) => {
 export async function getServerSideProps(context) {
   const { word } = context.params;
   const wordData = await fetchWordData(word);
-
   return {
     props: {
       wordData,
