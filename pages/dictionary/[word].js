@@ -54,7 +54,7 @@ const WordDetail = ({ wordData }) => {
           className="wordDetailContainer roboto-mono-message mt-2"
         >
           <div className="container">
-            <h2>{wordItem.word}</h2>
+            <h1>{wordItem.word}</h1>
             <p
               className={`mb-0 ${
                 wordItem.wordType ? wordItem.wordType.toLowerCase() : ""
@@ -66,21 +66,17 @@ const WordDetail = ({ wordData }) => {
             {wordItem.spellingVariations && (
               <p>{wordItem.spellingVariations.join(", ")}</p>
             )}
-            <div className="pronunciation d-flex">
+            {/* <div className="pronunciation d-flex">
               <button className="btn btn-speak" onClick={handleSpeak}>
                 <i className="fa fa-volume-up mx-1" aria-hidden="true"></i>
-                 Pronunciation: {wordItem.pronunciation}
+                Pronunciation: {wordItem.pronunciation}
               </button>
-            </div>
+            </div> */}
 
-            <label>Definitions:</label>
-            {wordItem.definitions.length > 0 ? (
-              wordItem.definitions.map((definition, defIndex) => (
-                <div key={defIndex} className="definition-container">
-                  <strong>{definition.language}: </strong>
-                  {definition.definition}
-                </div>
-              ))
+            {wordItem.definition ? (
+              <div className="definition-container">
+                {wordItem.definition}
+              </div>
             ) : (
               <p>No definition yet.</p>
             )}
