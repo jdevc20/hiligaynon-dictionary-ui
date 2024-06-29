@@ -55,6 +55,7 @@ const WordDetail = ({ wordData }) => {
         >
           <div className="container">
             <h1>{wordItem.word}</h1>
+
             <p
               className={`mb-0 ${
                 wordItem.wordType ? wordItem.wordType.toLowerCase() : ""
@@ -74,13 +75,11 @@ const WordDetail = ({ wordData }) => {
             </div> */}
 
             {wordItem.definition ? (
-              <div className="definition-container">
-                {wordItem.definition}
-              </div>
+              <div className="definition-container">{wordItem.definition}</div>
             ) : (
               <p>No definition yet.</p>
             )}
-            
+
             <br />
             <label>Examples:</label>
             <ul>
@@ -105,6 +104,10 @@ const WordDetail = ({ wordData }) => {
                 <strong>Etymology:</strong> {wordItem.etymology}
               </p>
             )}
+            <br />
+            <a href={`/dictionary/edit?word_id=${wordItem._id}`} className="btn btn-primary">
+                <i className="fa fa-edit" aria-hidden="true"></i> Edit
+            </a>
           </div>
         </div>
       ))}
