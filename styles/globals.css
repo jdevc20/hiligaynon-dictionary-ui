@@ -357,3 +357,33 @@ label {
 .page {
   margin-top: 80px;
 }
+
+.NumberToHiligaynonText {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.numgroup {
+  background-color: #fcbf20;
+  border-radius: 5px;
+  margin: 2px;
+  padding: 2px;
+  font-weight: bold;
+}
+
+.billion {
+  background-color: #ff6347; /* Tomato */
+}
+
+.million {
+  background-color:  #1e90ff; /* Dodger Blue */
+}
+
+.thousand {
+  background-color:  #32cd32; /* Lime Green */
+}
+
+.hundred {
+  background-color:  #ffc0cb; /* Pink */
+}
