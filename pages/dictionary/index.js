@@ -107,7 +107,7 @@ function Dictionary() {
                       ))}
                     </div>
                   ) : (
-                    <div>No words found.</div>
+                    <div></div>
                   )}
                 </>
               )}

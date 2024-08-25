@@ -43,14 +43,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="container home-landing-message mt-2">
-          If you haven't found a word, please help us expand our resources by
-          contributing.
-          <br></br>
-          <Link href="/dictionarycontribute" className="btn btn-primary mt-2">
-            Contribute
-          </Link>
-        </div>
       </div>
     </>
   );
