@@ -4,6 +4,8 @@ import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Layout from "@/components/Layout";
 import Link from "next/link";
+import HiligaynonCities from "@/components/HiligaynonCities";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -63,10 +65,14 @@ export default function Home() {
                   Mimaropa."
                 </p>
               </div>
+              <HiligaynonCities/>
             </div>
+            
           </div>
+         
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
+import logo from '../public/logo.png'
 
 function Navbar() {
   useEffect(() => {
@@ -23,7 +24,8 @@ function Navbar() {
 <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
   <div className="container">
     <Link href="/" legacyBehavior>
-      <a className="navbar-brand">Hiligaynon</a>
+      <a className="navbar-brand">Hiligaynon Hub</a>
+      
     </Link>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
@@ -39,11 +41,6 @@ function Navbar() {
         <li className="nav-item">
           <Link href="/grammar" legacyBehavior>
             <a className="nav-link">Grammar</a>
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link href="/about" legacyBehavior>
-            <a className="nav-link">About</a>
           </Link>
         </li>
         <li className="nav-item">

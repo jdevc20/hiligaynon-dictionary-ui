@@ -1,6 +1,6 @@
 :root {
   /* Colors */
-  --primary-color: #0b8e75;
+  --primary-color: #44413a;
   --secondary-color: #ff6b81;
   --background-color: #f9fefd;
   /* Fonts */
@@ -378,4 +378,25 @@ label {
 
 .hundred {
   background-color:  #ffc0cb; /* Pink */
+}
+
+
+.footer {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  text-align: center;
+  border-top: 1px solid #e1e1e1;
+}
+.footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
