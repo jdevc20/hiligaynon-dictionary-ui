@@ -36,8 +36,7 @@ export default function Home() {
         </div>
       </div >
           <p className="mt-4">
-            "Welcome to your gateway to the richness of the Hiligaynon/Ilonggo
-            language! Hiligaynon is a Visayan/Bisaya language spoken in the
+            <b>Hiligaynon</b>" is a <i>Visayan/Bisaya language</i> spoken in the
             Western Visayas region of the Philippines. Explore our comprehensive
             dictionary, delve into the intricacies of grammar, and discover the
             vibrant culture embedded within each word. Whether you're a language
