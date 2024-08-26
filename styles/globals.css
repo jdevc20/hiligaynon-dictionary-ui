@@ -35,7 +35,11 @@ body {
   justify-content: center;
   align-items: center;
   height: 10vh;
-  padding-top: 10px;
+  position: sticky;
+  top: 50px;
+  z-index: 1000; 
+  background-color: var(--background-color);
+  
 }
 
 .searchBar {
