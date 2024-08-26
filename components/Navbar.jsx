@@ -42,11 +42,6 @@ function Navbar() {
           </Link>
         </li>
         <li className="nav-item">
-          <Link href="/messages" legacyBehavior>
-            <a className="nav-link">Messages</a>
-          </Link>
-        </li>
-        <li className="nav-item">
           <Link href="/about" legacyBehavior>
             <a className="nav-link">About</a>
           </Link>
