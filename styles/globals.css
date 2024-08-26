@@ -22,6 +22,10 @@ body {
 
 }
 
+.page {
+  margin-top: 80px;
+}
+
 .navbar {
   background-color: var(--primary-color);
 }
@@ -49,7 +53,7 @@ body {
 }
 
 .resultContainer {
-  height: calc(70vh - 20px);
+  height: 100%;
   overflow-y: auto;
   margin-top: 10px;
   /* border-radius: 10px; */
@@ -144,13 +148,6 @@ body {
 }
 
 
-
-
-
-
-
-
-
 .form-container {
   background-color: white;
   margin: 0 auto;
@@ -233,8 +230,6 @@ p {
 
 
 /*Word Type*/
-/* Noun */
-/* Noun */
 .noun {
   background-color: hsl(210, 50%, 70%); /* pastel blue */
   font-weight: bold;
@@ -350,9 +345,6 @@ label {
   background-color: #0b8e75;
 }
 
-.page {
-  margin-top: 80px;
-}
 
 .NumberToHiligaynonText {
   background-color: #f0f0f0;

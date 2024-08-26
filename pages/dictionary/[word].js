@@ -33,6 +33,30 @@ const WordDetail = ({ wordData }) => {
     );
   }
 
+  const handleDelete = async (id) => {
+    if (window.confirm("Are you sure you want to delete this word?")) {
+      try {
+        const response = await fetch(`https://ilonggogid-api.onrender.com/dictionary/words/${id}`, {
+          method: 'DELETE',
+        });
+
+        console.log(response)
+  
+        if (response.ok) {
+          // Handle successful deletion, e.g., refresh the list of words
+          alert('Word deleted successfully');
+          window.location.reload();
+          // You can add a function here to update the UI after deletion
+        } else {
+          window.location.reload();
+        }
+      } catch (error) {
+        console.error('Error deleting word:', error);
+      }
+    }
+  };
+  
+
   // Ensure wordData.data is an array before mapping over it
   if (!Array.isArray(wordData.data)) {
     return (
@@ -107,6 +131,9 @@ const WordDetail = ({ wordData }) => {
             <br />
             <a href={`/dictionary/edit?word_id=${wordItem._id}`} className="btn btn-primary">
                 <i className="fa fa-edit" aria-hidden="true"></i> Edit
+            </a>
+            <a  className="btn btn-secondary mx-2" onClick={() => handleDelete(wordItem._id)}>
+                <i className="fa fa-delete" aria-hidden="true"></i> Delete
             </a>
           </div>
         </div>

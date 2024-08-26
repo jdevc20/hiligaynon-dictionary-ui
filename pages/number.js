@@ -115,7 +115,7 @@ function NumberToHiligaynonText() {
   };
 
   return (
-    <div className="container page">
+    <div className="container page mt-4">
       <div className="NumberToHiligaynonText">
         <h2>Hiligaynon Number Converter</h2>
         <input
