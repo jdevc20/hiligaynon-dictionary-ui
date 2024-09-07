@@ -13,8 +13,8 @@ const Grammar = () => {
         { id: 7, title: '7. Language Learning Resources', content: () => <p>Recommended books, websites, apps, courses, language exchange opportunities.</p> },
         { id: 8, title: '8. Advanced Topics', content: () => <p>Advanced grammar rules, literary forms, historical evolution.</p> },
         { id: 9, title: '9. Language Maintenance and Preservation', content: () => <p>Initiatives for preservation, importance for culture and identity.</p> },
-        { id: 10, title: '11. Number System', content: () => <NumberToHiligaynonText/> },
-        { id: 11, title: '10. Appendix', content: () => (
+        { id: 10, title: '10. Number System', content: () => <NumberToHiligaynonText/> },
+        { id: 11, title: '11. Appendix', content: () => (
             <div>
                 <p>Glossary, <i>additional resources,</i> acknowledgments.</p>
             </div>
