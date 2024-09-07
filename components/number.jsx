@@ -115,7 +115,7 @@ function NumberToHiligaynonText() {
   };
 
   return (
-    <div className="container page mt-4">
+    <div className="container page">
       <div className="NumberToHiligaynonText">
         <h2>Hiligaynon Number Converter</h2>
         <input
@@ -125,7 +125,7 @@ function NumberToHiligaynonText() {
           onChange={(e) => setInputNumber(e.target.value)}
           placeholder="Enter a number"
         />
-        <button className="btn" onClick={handleConvert}>
+        <button className="btn btn-primary m-2" onClick={handleConvert}>
           Convert
         </button>
         <p>Translated to Hiligaynon:</p>

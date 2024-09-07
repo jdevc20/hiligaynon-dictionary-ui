@@ -43,11 +43,6 @@ function Navbar() {
             <a className="nav-link">Grammar</a>
           </Link>
         </li>
-        <li className="nav-item">
-          <Link href="/number" legacyBehavior>
-            <a className="nav-link">Number</a>
-          </Link>
-        </li>
       </ul>
     </div>
   </div>
