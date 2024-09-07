@@ -18,7 +18,7 @@ function Dictionary() {
     const initialLetter = query.letter || "a";
     fetchWords(initialLetter, searchTerm);
     if (!query.letter) {
-      router.replace("/dictionary?letter=a");
+      router.replace("/api?letter=a");
     }
   }, [query.letter, searchTerm]);
 
@@ -26,8 +26,8 @@ function Dictionary() {
     setIsLoading(true);
     try {
       let endpoint = searchTerm
-        ? `/dictionary/search?query=${encodeURIComponent(searchTerm)}`
-        : `/dictionary/words?letter=${letter}`;
+        ? `/api/search?query=${encodeURIComponent(searchTerm)}`
+        : `/api/words?letter=${letter}`;
       const response = await api.get(endpoint);
       setWords(response.data); 
     } catch (error) {
