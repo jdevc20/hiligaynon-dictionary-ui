@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 const fetchWordData = async (word) => {
   try {
     const response = await fetch(
-      `https://ilonggogid-api.onrender.com/dictionary/words/by-word/${word}`
+      `https://ilonggogid-api.onrender.com/api/words/by-word/${word}`
     );
     if (!response.ok) {
       throw new Error("Failed to fetch word data");
@@ -18,9 +18,6 @@ const fetchWordData = async (word) => {
 
 const WordDetail = ({ wordData }) => {
   const router = useRouter();
-  const handleSpeak = () => {
-    // Leave Blank for now
-  };
 
   if (!wordData || !wordData.data || wordData.data.length === 0) {
     return (
@@ -73,6 +70,7 @@ const WordDetail = ({ wordData }) => {
         <i className="fa fa-chevron-circle-left" aria-hidden="true"></i>
       </button>
       {wordData.data.map((wordItem, index) => (
+        
         <div
           key={index}
           className="wordDetailContainer roboto-mono-message mt-2"
@@ -87,16 +85,9 @@ const WordDetail = ({ wordData }) => {
             >
               {wordItem.wordType}
             </p>
-            {/* Display spelling variations */}
             {wordItem.spellingVariations && (
               <p>{wordItem.spellingVariations.join(", ")}</p>
             )}
-            {/* <div className="pronunciation d-flex">
-              <button className="btn btn-speak" onClick={handleSpeak}>
-                <i className="fa fa-volume-up mx-1" aria-hidden="true"></i>
-                Pronunciation: {wordItem.pronunciation}
-              </button>
-            </div> */}
 
             {wordItem.definition ? (
               <div className="definition-container">{wordItem.definition}</div>
