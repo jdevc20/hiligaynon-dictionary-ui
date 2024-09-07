@@ -27,7 +27,7 @@ const WordForm = ({ onSubmit }) => {
         const wordData = { word, definition, examples, pronunciation, isActive, wordType, furtherDetails, etymology, isRootWord };
 
         try {
-            const response = await fetch('https://ilonggogid-api.onrender.com/dictionary/words', {
+            const response = await fetch('https://ilonggogid-api.onrender.com/api/words', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(wordData),

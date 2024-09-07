@@ -23,7 +23,7 @@ const WordForm = () => {
                 }
 
                 // Fetching word details from API
-                const response = await fetch(`https://ilonggogid-api.onrender.com/dictionary/words/by-id/${wordId}`);
+                const response = await fetch(`https://ilonggogid-api.onrender.com/api/words/by-id/${wordId}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch word details');
                 }
@@ -69,7 +69,7 @@ const WordForm = () => {
             
             if (wordId) {
                 // Update existing word
-                response = await fetch(`https://ilonggogid-api.onrender.com/dictionary/words/${wordId}`, {
+                response = await fetch(`https://ilonggogid-api.onrender.com/api/words/${wordId}`, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(wordData),
@@ -77,7 +77,7 @@ const WordForm = () => {
                 alert("Naupdate naman guid ang word. Madamo guid nga salamat sa inyo!");
             } else {
                 // Create new word
-                response = await fetch('https://ilonggogid-api.onrender.com/dictionary/words', {
+                response = await fetch('https://ilonggogid-api.onrender.com/api/words', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(wordData),
