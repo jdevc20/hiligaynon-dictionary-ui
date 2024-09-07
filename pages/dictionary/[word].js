@@ -5,7 +5,9 @@ const fetchWordData = async (word) => {
   try {
     const response = await fetch(
       `https://ilonggogid-api.onrender.com/api/words/by-word/${word}`
+      
     );
+    console.log("Hello");
     if (!response.ok) {
       throw new Error("Failed to fetch word data");
     }

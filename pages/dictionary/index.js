@@ -54,7 +54,7 @@ function Dictionary() {
 
   const handleWordSelect = (word) => {
     setIsLoadingWord(true);
-    router.push(`/api/${word.word}`);
+    router.push(`/word/${word.word}`);
   };
 
   const removeAccents = (str) => {
