@@ -33,7 +33,7 @@ const WordDetail = ({ wordData }) => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this word?")) {
       try {
-        const response = await fetch(`https://ilonggogid-api.onrender.com/dictionary/words/${id}`, {
+        const response = await fetch(`https://ilonggogid-api.onrender.com/api/words/${id}`, {
           method: 'DELETE',
         });
 
